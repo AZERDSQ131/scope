@@ -4,7 +4,7 @@
   "description": "🏔️ neofetch for your codebase — beautiful project overview in your terminal",
   "type": "module",
   "bin": {
-    "scope": "./dist/index.js"
+    "scope": "dist/index.js"
   },
   "main": "./dist/index.js",
   "exports": {
