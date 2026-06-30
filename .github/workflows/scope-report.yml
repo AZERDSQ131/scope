@@ -1,0 +1,34 @@
+name: Scope Report
+description: |
+  Generate a beautiful codebase overview with each push.
+  Uploads the report as a build artifact you can download and share.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  scope:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full git history for accurate stats
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Once published to npm. For now, build from source:
+      # - run: npm ci && npm run build
+      # - run: node dist/index.js --html --output scope-report.html
+      - run: npx @azerdsq131/scope --html --output scope-report.html
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: scope-report
+          path: scope-report.html
