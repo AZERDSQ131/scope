@@ -135,7 +135,7 @@ export function formatTerminal(info: ProjectInfo & { version?: string }): string
   // ── Footer ──
   lines.push("");
   lines.push(pc.dim("  Generated ") + new Date().toLocaleString());
-  lines.push(pc.dim("  ") + pc.italic("npx scope") + pc.dim(" to explore any project"));
+  lines.push(pc.dim("  ⭐ github.com/AZERDSQ131/scope"));
   lines.push("");
 
   return lines.join("\n");
