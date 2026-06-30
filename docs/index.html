@@ -12,107 +12,140 @@
       color: #c9d1d9;
       line-height: 1.6;
     }
-    .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-    header { text-align: center; padding: 4rem 0 2rem; }
-    pre {
+    .container { max-width: 880px; margin: 0 auto; padding: 2rem; }
+    header { text-align: center; padding: 3rem 0 1rem; }
+    pre.logo {
       font-family: 'SF Mono', 'Fira Code', monospace;
       color: #58a6ff;
-      font-size: 0.9rem;
-      line-height: 1.2;
+      font-size: 0.85rem;
+      line-height: 1.25;
+      display: inline-block;
+      text-align: left;
     }
-    h1 { font-size: 2.5rem; margin: 1rem 0; color: #f0f6fc; }
-    .subtitle { font-size: 1.2rem; color: #8b949e; margin-bottom: 2rem; }
-    .terminal {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      padding: 1.5rem;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 0.8rem;
-      line-height: 1.5;
-      overflow-x: auto;
-      margin: 2rem 0;
-    }
-    .terminal .cyan { color: #58a6ff; }
-    .terminal .green { color: #3fb950; }
-    .terminal .yellow { color: #d29922; }
-    .terminal .magenta { color: #bc8cff; }
-    .terminal .dim { color: #484f58; }
-    .terminal .white { color: #e6edf3; }
-    .terminal .bold { font-weight: bold; }
-    .terminal .red { color: #f85149; }
-    .terminal .blue { color: #58a6ff; }
-
+    h1 { font-size: 2.5rem; margin: 0.5rem 0; color: #f0f6fc; display: none; }
+    .subtitle { font-size: 1.2rem; color: #8b949e; margin-bottom: 1rem; }
+    .demo-svg { max-width: 100%; margin: 2rem auto; display: block; border-radius: 8px; }
+    .btn-group { margin: 1.5rem 0; }
     .btn {
       display: inline-block;
       padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      margin: 0.5rem;
+      margin: 0.4rem;
       font-size: 1rem;
+      transition: all 0.15s ease;
     }
+    .btn:hover { transform: translateY(-1px); }
     .btn-primary { background: #238636; color: #fff; }
+    .btn-primary:hover { background: #2ea043; }
     .btn-secondary { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
-    .btn:hover { opacity: 0.9; }
-
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 3rem 0; }
+    .btn-secondary:hover { background: #30363d; }
+    .btn-ghost { background: transparent; color: #58a6ff; border: 1px solid #58a6ff40; }
+    .btn-ghost:hover { background: #58a6ff10; }
+    .badge-row { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; }
+    .badge-row img { height: 20px; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 3rem 0;
+    }
     .feature {
       background: #161b22;
       border: 1px solid #30363d;
       border-radius: 8px;
       padding: 1.5rem;
+      transition: border-color 0.2s;
     }
-    .feature h3 { color: #f0f6fc; margin-bottom: 0.5rem; }
+    .feature:hover { border-color: #58a6ff60; }
+    .feature h3 { color: #f0f6fc; margin-bottom: 0.5rem; font-size: 1rem; }
     .feature p { color: #8b949e; font-size: 0.9rem; }
-
-    footer { text-align: center; padding: 3rem 0; color: #484f58; }
-    footer a { color: #58a6ff; }
+    .terminal {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    .terminal .prompt { color: #3fb950; }
+    .terminal .output { color: #e6edf3; white-space: pre; }
+    .terminal .dim { color: #484f58; }
+    .terminal .green { color: #3fb950; }
+    .terminal .cyan { color: #58a6ff; }
+    .terminal .bold { font-weight: bold; }
+    code {
+      background: #21262d;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .cmd { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 0.8rem 1rem; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9rem; color: #e6edf3; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .cmd .dollar { color: #3fb950; }
+    .cmd .text { color: #e6edf3; }
+    .copy-btn { background: none; border: none; color: #8b949e; cursor: pointer; padding: 0.2rem; border-radius: 4px; }
+    .copy-btn:hover { color: #e6edf3; background: #30363d; }
+    .install-section { text-align: center; margin: 3rem 0; padding: 2rem; background: #161b22; border: 1px solid #30363d; border-radius: 12px; }
+    .install-section h2 { color: #f0f6fc; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .install-section p { color: #8b949e; margin-bottom: 1.5rem; }
+    .output-formats { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .format-card { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 1rem 1.5rem; text-align: center; min-width: 120px; }
+    .format-card .icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .format-card .name { color: #e6edf3; font-weight: 600; font-size: 0.9rem; }
+    .format-card .desc { color: #8b949e; font-size: 0.8rem; }
+    .stats-row { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 700; color: #f0f6fc; }
+    .stat-label { font-size: 0.8rem; color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em; }
+    footer { text-align: center; padding: 3rem 0; color: #484f58; font-size: 0.85rem; }
+    footer a { color: #58a6ff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 600px) { .container { padding: 1rem; } .features { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <pre>
+      <pre class="logo">
         &#x2571;★&#x2572;
        &#x2571;   &#x2572;     neofetch for your codebase
       &#x2571;     &#x2572;
-     &#x2571;  SCOPE &#x2572;          v1.0.0
+     &#x2571;  SCOPE &#x2572;          v1.0.1
     &#x2571;___________&#x2572;
       </pre>
-      <h1>Scope</h1>
-      <p class="subtitle">Beautiful project overviews from your terminal — like neofetch for your codebase</p>
-      <a href="https://github.com/AZERDSQ131/scope" class="btn btn-primary">View on GitHub</a>
-      <a href="#try" class="btn btn-secondary">Try it Now</a>
+      <p class="subtitle">
+        One command to see everything about any codebase.<br>
+        Languages, frameworks, git, dependencies. Beautifully presented.
+      </p>
+
+      <div class="badge-row">
+        <img src="https://img.shields.io/npm/v/@azerdsq131/scope?style=flat-square" alt="npm version"/>
+        <img src="https://img.shields.io/github/stars/AZERDSQ131/scope?style=flat-square" alt="stars"/>
+        <img src="https://img.shields.io/github/actions/workflow/status/AZERDSQ131/scope/ci.yml?branch=main&style=flat-square" alt="CI"/>
+        <img src="https://img.shields.io/github/license/AZERDSQ131/scope?style=flat-square" alt="license"/>
+      </div>
+
+      <div class="btn-group">
+        <a href="https://github.com/AZERDSQ131/scope" class="btn btn-primary">&#x1F5A5;&#xFE0F; View on GitHub</a>
+        <a href="#try" class="btn btn-secondary">&#x26A1; Try it Now</a>
+        <a href="https://github.com/AZERDSQ131/scope/releases" class="btn btn-ghost">&#x1F4E6; Download</a>
+      </div>
     </header>
 
-    <div class="terminal">
-      <span class="dim">$ </span>npx @azerdsq131/scope
-      <br><br>
-      <span class="cyan">        &#x2571;★&#x2572;</span><br>
-      <span class="cyan">       &#x2571;   &#x2572;     </span><span class="dim">neofetch for your codebase</span><br>
-      <span class="cyan">      &#x2571;     &#x2572;</span><br>
-      <span class="cyan bold">     &#x2571;  SCOPE &#x2572;          </span><span class="dim">v1.0.0</span><br>
-      <span class="cyan">    &#x2571;___________&#x2572;</span><br><br>
-      <span class="dim">  Project</span><br>
-      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
-      <span class="bold">  Name</span>          my-awesome-project<br>
-      <span class="bold">  Packages</span>      via pnpm<br>
-      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
-      <span class="bold">  Languages</span>     <span class="green">TypeScript</span>, <span class="green">JavaScript</span>, <span class="green">CSS</span>, <span class="green">HTML</span><br>
-      <span class="bold">  Frameworks</span>    <span class="yellow">Next.js</span>, <span class="yellow">React</span>, <span class="yellow">Tailwind CSS</span><br>
-      <span class="bold">  Database</span>      <span class="blue">PostgreSQL</span>, <span class="blue">Redis</span><br>
-      <span class="bold">  Tools</span>         <span class="magenta">Docker</span>, <span class="magenta">ESLint</span>, <span class="magenta">Vitest</span><br>
-      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
-      <span class="bold">  Files</span>         1,284 across 47 dirs<br>
-      <span class="bold">  Deps</span>          42 prod, 89 dev<br>
-      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
-      <span class="bold">  Branch</span>        <span class="green">main</span><br>
-      <span class="bold">  Commits</span>       1,847<br>
-      <span class="bold">  Contributors</span>  12<br>
-      <span class="bold">  Head</span>          feat: add dark mode support<br>
-      <span class="bold">  Latest</span>        2h ago<br>
-      <span class="bold">  Churn</span>          <span class="green">+89,420</span> / <span class="red">-42,180</span>
+    <!-- Animated Demo SVG -->
+    <img src="../assets/demo.svg" alt="Scope terminal output demo" class="demo-svg" style="background:#0d1117;border:1px solid #30363d;"/>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Languages</div></div>
+      <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Frameworks</div></div>
+      <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Tools</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Formats</div></div>
     </div>
 
     <div class="features">
@@ -122,7 +155,7 @@
       </div>
       <div class="feature">
         <h3>&#x1F9EA; Smart Detection</h3>
-        <p>Automatically identifies 30+ languages, 25+ frameworks, and 30+ tools</p>
+        <p>Automatically identifies languages, frameworks, databases, and tools</p>
       </div>
       <div class="feature">
         <h3>&#x1F4CA; Beautiful Output</h3>
@@ -130,36 +163,116 @@
       </div>
       <div class="feature">
         <h3>&#x1F419; Git Analytics</h3>
-        <p>Branch, commits, contributors, churn, repo age — all at a glance</p>
+        <p>Branch, commits, contributors, churn, repo age, and file changes</p>
       </div>
       <div class="feature">
-        <h3>&#x1F4E6; AI-Ready</h3>
-        <p>JSON and Markdown output for feeding context to AI coding assistants</p>
+        <h3>&#x1F4E6; AI-Ready Outputs</h3>
+        <p>JSON, Markdown, and HTML — feed context to any AI coding assistant</p>
       </div>
       <div class="feature">
         <h3>&#x26A1; Zero Config</h3>
-        <p>Works on any project, any language, any size — just run it</p>
+        <p>Works on any project, any language, any size — just run <code>npx scope</code></p>
       </div>
     </div>
 
-    <section id="try" style="text-align:center;margin:3rem 0;">
-      <h2 style="color:#f0f6fc;margin-bottom:1rem;">Try It Now</h2>
-      <div class="terminal" style="text-align:left;">
-        <span class="dim"># One command, no install needed</span><br>
-        <span class="green">$</span> npx @azerdsq131/scope<br><br>
-        <span class="dim"># Or install globally</span><br>
-        <span class="green">$</span> npm install -g @azerdsq131/scope<br>
-        <span class="green">$</span> scope<br><br>
-        <span class="dim"># JSON for AI assistants</span><br>
-        <span class="green">$</span> npx @azerdsq131/scope --json<br><br>
-        <span class="dim"># Markdown for docs</span><br>
-        <span class="green">$</span> npx @azerdsq131/scope --markdown
+    <!-- Output format cards -->
+    <div class="output-formats">
+      <div class="format-card">
+        <div class="icon">&#x1F4BB;</div>
+        <div class="name">Terminal</div>
+        <div class="desc">Beautiful ANSI output</div>
       </div>
-    </section>
+      <div class="format-card">
+        <div class="icon">{ }</div>
+        <div class="name">JSON</div>
+        <div class="desc">For AI &amp; CI/CD</div>
+      </div>
+      <div class="format-card">
+        <div class="icon">#</div>
+        <div class="name">Markdown</div>
+        <div class="desc">For docs &amp; wikis</div>
+      </div>
+      <div class="format-card">
+        <div class="icon">&lt;/&gt;</div>
+        <div class="name">HTML</div>
+        <div class="desc">Shareable reports</div>
+      </div>
+    </div>
+
+    <!-- Install -->
+    <div class="install-section" id="try">
+      <h2>Try it in one command</h2>
+      <p>No install required. Run in any project directory.</p>
+      <div class="cmd" onclick="navigator.clipboard?.writeText('npx @azerdsq131/scope')">
+        <span class="dollar">$</span>
+        <span class="text">npx @azerdsq131/scope</span>
+        <button class="copy-btn" onclick="event.stopPropagation();navigator.clipboard?.writeText('npx @azerdsq131/scope');this.textContent='&#x2713;'">&#x1F4CB;</button>
+      </div>
+    </div>
+
+    <!-- Terminal demo -->
+    <div class="terminal">
+      <span class="prompt">$</span> npx @azerdsq131/scope ~/projects/next.js<br><br>
+      <span class="output">
+        <span class="cyan">        &#x2571;★&#x2572;</span>
+<span class="cyan">       &#x2571;   &#x2572;     </span><span class="dim">neofetch for your codebase</span>
+<span class="cyan">      &#x2571;     &#x2572;</span>
+<span class="cyan bold">     &#x2571;  SCOPE &#x2572;          </span><span class="dim">v1.0.1</span>
+<span class="cyan">    &#x2571;___________&#x2572;</span>
+
+<span class="dim">  Project</span>
+<span class="dim">────────────────────────────────────────────────</span>
+  Name          next.js
+  Packages      via pnpm
+<span class="dim">────────────────────────────────────────────────</span>
+<span class="dim">  Tech Stack</span>
+<span class="dim">────────────────────────────────────────────────</span>
+  Languages     <span class="green">TypeScript</span>, <span class="green">JavaScript</span>, <span class="green">CSS</span>, <span class="green">Shell</span>, <span class="green">Markdown</span>
+  Frameworks    <span class="yellow">React</span>, <span class="yellow">Next.js</span>, <span class="yellow">Tailwind CSS</span>
+  Database      <span class="blue">PostgreSQL</span>
+  Tools         <span class="magenta">Docker</span>, <span class="magenta">ESLint</span>, <span class="magenta">Jest</span>, <span class="magenta">Playwright</span>, <span class="magenta">Turbo</span>
+<span class="dim">────────────────────────────────────────────────</span>
+<span class="dim">  Codebase</span>
+<span class="dim">────────────────────────────────────────────────</span>
+  Files         24,965 across 12,863 dirs
+  Deps          83 prod, 432 dev
+<span class="dim">────────────────────────────────────────────────</span>
+<span class="dim">  Git</span>
+<span class="dim">────────────────────────────────────────────────</span>
+  Branch        <span class="green">canary</span>
+  Commits       29,847
+  Contributors  2,100+
+  Latest        3h ago
+  Churn         +12.4M / -5.2M
+<span class="dim">────────────────────────────────────────────────</span>
+      </span>
+    </div>
+
+    <div style="text-align:center;margin:3rem 0;">
+      <h2 style="color:#f0f6fc;margin-bottom:0.5rem;font-size:1.3rem;">All these outputs from one command</h2>
+      <p style="color:#8b949e;margin-bottom:1.5rem;">
+        Terminal &#x2022; JSON &#x2022; Markdown &#x2022; HTML
+      </p>
+      <div class="cmd" onclick="navigator.clipboard?.writeText('npx @azerdsq131/scope --json')">
+        <span class="dollar">$</span>
+        <span class="text">npx @azerdsq131/scope --json</span>
+        <button class="copy-btn" onclick="event.stopPropagation();navigator.clipboard?.writeText('npx @azerdsq131/scope --json');this.textContent='&#x2713;'">&#x1F4CB;</button>
+      </div>
+      <br><br>
+      <div class="cmd" onclick="navigator.clipboard?.writeText('npx @azerdsq131/scope --html --output report.html')">
+        <span class="dollar">$</span>
+        <span class="text">npx @azerdsq131/scope --html --output report.html</span>
+        <button class="copy-btn" onclick="event.stopPropagation();navigator.clipboard?.writeText('npx @azerdsq131/scope --html --output report.html');this.textContent='&#x2713;'">&#x1F4CB;</button>
+      </div>
+    </div>
 
     <footer>
-      <p>MIT Licensed &middot; Built with TypeScript</p>
-      <p><a href="https://github.com/AZERDSQ131/scope">GitHub</a> &middot; <a href="https://www.npmjs.com/package/@azerdsq131/scope">npm</a></p>
+      <p>MIT Licensed &middot; Built with TypeScript &middot; Open Source</p>
+      <p>
+        <a href="https://github.com/AZERDSQ131/scope">GitHub</a> &middot;
+        <a href="https://www.npmjs.com/package/@azerdsq131/scope">npm</a> &middot;
+        <a href="https://github.com/AZERDSQ131/scope/issues">Issues</a>
+      </p>
     </footer>
   </div>
 </body>
