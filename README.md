@@ -29,15 +29,26 @@
 
   <p>
     <a href="https://www.npmjs.com/package/@azerdsq131/scope">
-      <img src="https://img.shields.io/npm/v/@azerdsq131/scope" alt="npm version"/>
+      <img src="https://img.shields.io/npm/v/@azerdsq131/scope?style=flat-square" alt="npm version"/>
+    </a>
+    <a href="https://github.com/AZERDSQ131/scope/actions/workflows/ci.yml">
+      <img src="https://img.shields.io/github/actions/workflow/status/AZERDSQ131/scope/ci.yml?branch=main&style=flat-square" alt="CI"/>
     </a>
     <a href="https://github.com/AZERDSQ131/scope">
-      <img src="https://img.shields.io/github/stars/AZERDSQ131/scope" alt="stars"/>
+      <img src="https://img.shields.io/github/stars/AZERDSQ131/scope?style=flat-square" alt="stars"/>
     </a>
     <a href="https://github.com/AZERDSQ131/scope/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/AZERDSQ131/scope" alt="license"/>
+      <img src="https://img.shields.io/github/license/AZERDSQ131/scope?style=flat-square" alt="license"/>
     </a>
   </p>
+
+  <a href="https://star-history.com/#AZERDSQ131/scope&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=AZERDSQ131/scope&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=AZERDSQ131/scope&type=Date" />
+      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=AZERDSQ131/scope&type=Date" width="400" />
+    </picture>
+  </a>
 
   <br/>
 </div>
