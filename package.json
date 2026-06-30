@@ -1,0 +1,55 @@
+{
+  "name": "@azerdsq131/scope",
+  "version": "1.0.1",
+  "description": "🏔️ neofetch for your codebase — beautiful project overview in your terminal",
+  "type": "module",
+  "bin": {
+    "scope": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "developer-tools",
+    "project-insights",
+    "codebase",
+    "statistics",
+    "git",
+    "productivity",
+    "neofetch"
+  ],
+  "author": "azerdsq131",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AZERDSQ131/scope"
+  },
+  "bugs": {
+    "url": "https://github.com/AZERDSQ131/scope/issues"
+  },
+  "homepage": "https://github.com/AZERDSQ131/scope#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
