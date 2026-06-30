@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope — neofetch for your codebase</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    header { text-align: center; padding: 4rem 0 2rem; }
+    pre {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      color: #58a6ff;
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2.5rem; margin: 1rem 0; color: #f0f6fc; }
+    .subtitle { font-size: 1.2rem; color: #8b949e; margin-bottom: 2rem; }
+    .terminal {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+    .terminal .cyan { color: #58a6ff; }
+    .terminal .green { color: #3fb950; }
+    .terminal .yellow { color: #d29922; }
+    .terminal .magenta { color: #bc8cff; }
+    .terminal .dim { color: #484f58; }
+    .terminal .white { color: #e6edf3; }
+    .terminal .bold { font-weight: bold; }
+    .terminal .red { color: #f85149; }
+    .terminal .blue { color: #58a6ff; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      font-size: 1rem;
+    }
+    .btn-primary { background: #238636; color: #fff; }
+    .btn-secondary { background: #21262d; color: #c9d1d9; border: 1px solid #30363d; }
+    .btn:hover { opacity: 0.9; }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 3rem 0; }
+    .feature {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .feature h3 { color: #f0f6fc; margin-bottom: 0.5rem; }
+    .feature p { color: #8b949e; font-size: 0.9rem; }
+
+    footer { text-align: center; padding: 3rem 0; color: #484f58; }
+    footer a { color: #58a6ff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <pre>
+        &#x2571;★&#x2572;
+       &#x2571;   &#x2572;     neofetch for your codebase
+      &#x2571;     &#x2572;
+     &#x2571;  SCOPE &#x2572;          v1.0.0
+    &#x2571;___________&#x2572;
+      </pre>
+      <h1>Scope</h1>
+      <p class="subtitle">Beautiful project overviews from your terminal — like neofetch for your codebase</p>
+      <a href="https://github.com/AZERDSQ131/scope" class="btn btn-primary">View on GitHub</a>
+      <a href="#try" class="btn btn-secondary">Try it Now</a>
+    </header>
+
+    <div class="terminal">
+      <span class="dim">$ </span>npx @azerdsq131/scope
+      <br><br>
+      <span class="cyan">        &#x2571;★&#x2572;</span><br>
+      <span class="cyan">       &#x2571;   &#x2572;     </span><span class="dim">neofetch for your codebase</span><br>
+      <span class="cyan">      &#x2571;     &#x2572;</span><br>
+      <span class="cyan bold">     &#x2571;  SCOPE &#x2572;          </span><span class="dim">v1.0.0</span><br>
+      <span class="cyan">    &#x2571;___________&#x2572;</span><br><br>
+      <span class="dim">  Project</span><br>
+      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
+      <span class="bold">  Name</span>          my-awesome-project<br>
+      <span class="bold">  Packages</span>      via pnpm<br>
+      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
+      <span class="bold">  Languages</span>     <span class="green">TypeScript</span>, <span class="green">JavaScript</span>, <span class="green">CSS</span>, <span class="green">HTML</span><br>
+      <span class="bold">  Frameworks</span>    <span class="yellow">Next.js</span>, <span class="yellow">React</span>, <span class="yellow">Tailwind CSS</span><br>
+      <span class="bold">  Database</span>      <span class="blue">PostgreSQL</span>, <span class="blue">Redis</span><br>
+      <span class="bold">  Tools</span>         <span class="magenta">Docker</span>, <span class="magenta">ESLint</span>, <span class="magenta">Vitest</span><br>
+      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
+      <span class="bold">  Files</span>         1,284 across 47 dirs<br>
+      <span class="bold">  Deps</span>          42 prod, 89 dev<br>
+      <span class="dim">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</span><br>
+      <span class="bold">  Branch</span>        <span class="green">main</span><br>
+      <span class="bold">  Commits</span>       1,847<br>
+      <span class="bold">  Contributors</span>  12<br>
+      <span class="bold">  Head</span>          feat: add dark mode support<br>
+      <span class="bold">  Latest</span>        2h ago<br>
+      <span class="bold">  Churn</span>          <span class="green">+89,420</span> / <span class="red">-42,180</span>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>&#x1F50D; Instant Insights</h3>
+        <p>Run in any project, get a complete overview in under a second</p>
+      </div>
+      <div class="feature">
+        <h3>&#x1F9EA; Smart Detection</h3>
+        <p>Automatically identifies 30+ languages, 25+ frameworks, and 30+ tools</p>
+      </div>
+      <div class="feature">
+        <h3>&#x1F4CA; Beautiful Output</h3>
+        <p>Color-coded terminal UI with visual bar charts and organized sections</p>
+      </div>
+      <div class="feature">
+        <h3>&#x1F419; Git Analytics</h3>
+        <p>Branch, commits, contributors, churn, repo age — all at a glance</p>
+      </div>
+      <div class="feature">
+        <h3>&#x1F4E6; AI-Ready</h3>
+        <p>JSON and Markdown output for feeding context to AI coding assistants</p>
+      </div>
+      <div class="feature">
+        <h3>&#x26A1; Zero Config</h3>
+        <p>Works on any project, any language, any size — just run it</p>
+      </div>
+    </div>
+
+    <section id="try" style="text-align:center;margin:3rem 0;">
+      <h2 style="color:#f0f6fc;margin-bottom:1rem;">Try It Now</h2>
+      <div class="terminal" style="text-align:left;">
+        <span class="dim"># One command, no install needed</span><br>
+        <span class="green">$</span> npx @azerdsq131/scope<br><br>
+        <span class="dim"># Or install globally</span><br>
+        <span class="green">$</span> npm install -g @azerdsq131/scope<br>
+        <span class="green">$</span> scope<br><br>
+        <span class="dim"># JSON for AI assistants</span><br>
+        <span class="green">$</span> npx @azerdsq131/scope --json<br><br>
+        <span class="dim"># Markdown for docs</span><br>
+        <span class="green">$</span> npx @azerdsq131/scope --markdown
+      </div>
+    </section>
+
+    <footer>
+      <p>MIT Licensed &middot; Built with TypeScript</p>
+      <p><a href="https://github.com/AZERDSQ131/scope">GitHub</a> &middot; <a href="https://www.npmjs.com/package/@azerdsq131/scope">npm</a></p>
+    </footer>
+  </div>
+</body>
+</html>
