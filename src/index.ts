@@ -9,6 +9,7 @@ import { detectStructure } from "./detectors/structure.js";
 import { detectDependencies, detectPackageManager } from "./detectors/deps.js";
 import { formatTerminal } from "./formatters/terminal.js";
 import { formatJSON, formatMarkdown } from "./formatters/json.js";
+import { formatHTML } from "./formatters/html.js";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -18,6 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 interface ScopeOptions {
   json?: boolean;
   markdown?: boolean;
+  html?: boolean;
   output?: string;
   name?: string;
 }
@@ -39,6 +41,7 @@ program
   .argument("[directory]", "Project directory to analyze", ".")
   .option("-j, --json", "Output as JSON")
   .option("-m, --markdown", "Output as Markdown (great for AI context)")
+  .option("-h, --html", "Output as HTML report")
   .option("-o, --output <file>", "Save output to a file")
   .option("-n, --name <name>", "Override project name")
   .action(async (directory: string, options: ScopeOptions) => {
@@ -84,6 +87,8 @@ program
         output = formatJSON(outputData) + "\n";
       } else if (options.markdown) {
         output = formatMarkdown(projectInfo) + "\n";
+      } else if (options.html) {
+        output = formatHTML(projectInfo) + "\n";
       } else {
         output = formatTerminal({ ...projectInfo, version: getVersion() });
       }

@@ -42,6 +42,12 @@
     </a>
   </p>
 
+  <br/>
+
+  <img src="assets/demo.svg" alt="Scope terminal output" width="100%" max-width="800px"/>
+
+  <br/><br/>
+
   <a href="https://star-history.com/#AZERDSQ131/scope&Date">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=AZERDSQ131/scope&type=Date&theme=dark" />
@@ -62,6 +68,7 @@
 - **File Structure Analysis** — Total files, directories, file type distribution with visual bar charts
 - **Dependency Overview** — Production vs development dependencies at a glance
 - **Beautiful Terminal Output** — Clean, color-coded, and easy to read
+- **HTML Reports** — Generate shareable HTML reports you can host or print
 - **JSON Export** — Perfect for CI/CD pipelines and AI coding assistants
 - **Markdown Export** — Great for documentation and sharing context
 
@@ -94,6 +101,9 @@ npx scope --json
 
 # Markdown output
 npx scope --markdown
+
+# HTML report (great for docs/CI)
+npx scope --html --output report.html
 ```
 
 ### Sample output
@@ -155,6 +165,7 @@ npx scope --markdown
 | `[directory]` | Project directory to analyze (default: `.`) |
 | `-j, --json` | Output as JSON |
 | `-m, --markdown` | Output as Markdown |
+| `-h, --html` | Output as HTML report |
 | `-o, --output <file>` | Save output to a file |
 | `-n, --name <name>` | Override project name |
 | `--help` | Show help |
