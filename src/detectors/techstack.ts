@@ -107,11 +107,25 @@ const FRAMEWORK_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }
   { name: "Fiber", test: (d) => { try { return readIfExists(d, "go.mod")?.includes("fiber") ?? false; } catch { return false; }}},
   { name: "Tauri", test: (d) => hasDependency(d, "tauri") || existsSync(join(d, "src-tauri")) },
   { name: "Electron", test: (d) => hasDependency(d, "electron") },
+  { name: "Expo", test: (d) => hasDependency(d, "expo") || existsSync(join(d, "app.json")) },
   { name: "Prisma", test: (d) => hasDependency(d, "prisma") || existsSync(join(d, "schema.prisma")) },
   { name: "Drizzle", test: (d) => hasDependency(d, "drizzle-orm") },
   { name: "Tailwind CSS", test: (d) => hasDependency(d, "tailwindcss") || existsSync(join(d, "tailwind.config.js")) || existsSync(join(d, "tailwind.config.ts")) },
   { name: "Bootstrap", test: (d) => hasDependency(d, "bootstrap") },
   { name: "Shadcn/ui", test: (d) => existsSync(join(d, "components.json")) || hasDependency(d, "@radix-ui") },
+  { name: "TanStack Query", test: (d) => hasDependency(d, "@tanstack/react-query") || hasDependency(d, "@tanstack/vue-query") },
+  { name: "TanStack Router", test: (d) => hasDependency(d, "@tanstack/react-router") || hasDependency(d, "@tanstack/vue-router") },
+  { name: "Zustand", test: (d) => hasDependency(d, "zustand") },
+  { name: "MobX", test: (d) => hasDependency(d, "mobx") || hasDependency(d, "mobx-react") },
+  { name: "RxJS", test: (d) => hasDependency(d, "rxjs") },
+  { name: "Socket.io", test: (d) => hasDependency(d, "socket.io") || hasDependency(d, "socket.io-client") },
+  { name: "tRPC", test: (d) => hasDependency(d, "@trpc/server") },
+  { name: "WordPress", test: (d) => existsSync(join(d, "wp-config.php")) || existsSync(join(d, "wp-content")) },
+  { name: "Symfony", test: (d) => existsSync(join(d, "symfony.lock")) || existsSync(join(d, "config/bundles.php")) },
+  { name: "Ruby on Rails", test: (d) => existsSync(join(d, "Gemfile")) && !!readIfExists(d, "Gemfile")?.includes("rails") },
+  { name: "Phoenix", test: (d) => hasDependency(d, "phoenix") || existsSync(join(d, "mix.exs")) && !!readIfExists(d, "mix.exs")?.includes("phoenix") },
+  { name: "Actix Web", test: (d) => !!readIfExists(d, "Cargo.toml")?.includes("actix-web") },
+  { name: "Leptos", test: (d) => !!readIfExists(d, "Cargo.toml")?.includes("leptos") },
 ];
 
 const TOOL_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }> = [
@@ -120,6 +134,13 @@ const TOOL_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }> = [
   { name: "ESLint", test: (d) => existsSync(join(d, ".eslintrc")) || existsSync(join(d, ".eslintrc.json")) || existsSync(join(d, ".eslintrc.js")) || hasDependency(d, "eslint") },
   { name: "Prettier", test: (d) => existsSync(join(d, ".prettierrc")) || existsSync(join(d, ".prettierrc.json")) || hasDependency(d, "prettier") },
   { name: "Biome", test: (d) => existsSync(join(d, "biome.json")) || hasDependency(d, "@biomejs/biome") },
+  { name: "Husky", test: (d) => hasDependency(d, "husky") || existsSync(join(d, ".husky")) },
+  { name: "lint-staged", test: (d) => hasDependency(d, "lint-staged") },
+  { name: "Sentry", test: (d) => hasDependency(d, "@sentry/nextjs") || hasDependency(d, "@sentry/react") || hasDependency(d, "sentry") },
+  { name: "PostCSS", test: (d) => hasDependency(d, "postcss") || existsSync(join(d, "postcss.config.js")) || existsSync(join(d, "postcss.config.mjs")) },
+  { name: "SWR", test: (d) => hasDependency(d, "swr") },
+  { name: "Zod", test: (d) => hasDependency(d, "zod") },
+  { name: "Valibot", test: (d) => hasDependency(d, "valibot") },
   { name: "Jest", test: (d) => hasDependency(d, "jest") },
   { name: "Vitest", test: (d) => hasDependency(d, "vitest") },
   { name: "Playwright", test: (d) => hasDependency(d, "@playwright/test") || hasDependency(d, "playwright") },
@@ -133,7 +154,6 @@ const TOOL_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }> = [
   { name: "Storybook", test: (d) => existsSync(join(d, ".storybook")) || hasDependency(d, "@storybook/react") },
   { name: "Vite", test: (d) => hasDependency(d, "vite") },
   { name: "Webpack", test: (d) => hasDependency(d, "webpack") },
-  { name: "tRPC", test: (d) => hasDependency(d, "@trpc/server") },
   { name: "Redis", test: (d) => hasDependency(d, "redis") || hasDependency(d, "ioredis") },
   { name: "PostgreSQL", test: (d) => hasDependency(d, "pg") || hasDependency(d, "postgres") || hasDependency(d, "@prisma/client") },
   { name: "MongoDB", test: (d) => hasDependency(d, "mongoose") || hasDependency(d, "mongodb") },
@@ -143,6 +163,11 @@ const TOOL_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }> = [
   { name: "Auth.js", test: (d) => hasDependency(d, "@auth/core") || hasDependency(d, "next-auth") },
   { name: "Clerk", test: (d) => hasDependency(d, "@clerk/nextjs") || hasDependency(d, "@clerk/clerk-react") },
   { name: "Stripe", test: (d) => hasDependency(d, "stripe") },
+  { name: "Kubernetes", test: (d) => existsSync(join(d, "kustomization.yaml")) || existsSync(join(d, "kustomization.yml")) || existsSync(join(d, "Chart.yaml")) },
+  { name: "Terraform", test: (d) => existsSync(join(d, "main.tf")) || existsSync(join(d, "terraform.tf")) },
+  { name: "Ansible", test: (d) => existsSync(join(d, "ansible.cfg")) || existsSync(join(d, "playbook.yml")) },
+  { name: "Pulumi", test: (d) => hasDependency(d, "@pulumi/pulumi") },
+  { name: "tRPC", test: (d) => hasDependency(d, "@trpc/server") },
 ];
 
 const DATABASE_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }> = [
@@ -157,6 +182,11 @@ const DATABASE_PATTERNS: Array<{ name: string; test: (dir: string) => boolean }>
   { name: "Neon", test: (d) => hasDependency(d, "@neondatabase/serverless") },
   { name: "Turso", test: (d) => hasDependency(d, "@libsql/client") },
   { name: "DynamoDB", test: (d) => hasDependency(d, "@aws-sdk/client-dynamodb") },
+  { name: "MariaDB", test: (d) => hasDependency(d, "mariadb") },
+  { name: "ClickHouse", test: (d) => hasDependency(d, "@clickhouse/client") || hasDependency(d, "clickhouse") },
+  { name: "DuckDB", test: (d) => hasDependency(d, "@duckdb/duckdb-wasm") || hasDependency(d, "duckdb") },
+  { name: "Neo4j", test: (d) => hasDependency(d, "neo4j-driver") },
+  { name: "Cassandra", test: (d) => hasDependency(d, "cassandra-driver") },
 ];
 
 function hasDependency(dir: string, ...names: string[]): boolean {
